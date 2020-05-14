@@ -1,6 +1,6 @@
 # getting base image ubuntu
 FROM ubuntu
-MAINTAINER arivan123 <thavabalanarivan199@gmail.com>
+MAINTAINER arivan
 RUN apt-get update &&\
   apt-get -y install sudo &&\
   apt-get -y install acl &&\
@@ -22,5 +22,4 @@ COPY nearest.sh /nearest.sh
 RUN bash nearest.sh
 COPY automation.sh /automation.sh
 COPY aliases.sh /aliases.sh
-RUN bash aliases.sh 
 CMD ["echo","finished"]
