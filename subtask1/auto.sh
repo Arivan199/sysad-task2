@@ -1,0 +1,47 @@
+#create the root web directory and assign the permission
+sudo mkdir /var/www/soldier.io/public_html
+sudo chmod 755 /var/www
+
+#create the webpages inside the webdirectory
+sudo touch /etc/www/soldier.io/public_html/index.php
+sudo touch /etc/www/soldier.io/public_html/attendance.php
+
+#apache2 configurations to enable the site
+sudo touch /etc/apache2/sites-available/soldier.io.conf
+sudo echo "<virtualHost *:80>
+       ServerName soldier.io
+       ServerAdmin info@soldier.io
+       ServerAlias www.soldier.io
+       DocumentRoot /var/www/soldier.io/public_html
+       ErrorLog ${APACHE_LOG_DIR}/error.log
+       CustomLog ${APACHE_LOG_DIR}/access.log combined
+       </virtualHost>" > /etc/apache2/sites-available/soldier.io.conf
+sudo echo "127.0.0.1  soldier.io" >> /etc/hosts
+sudo a2ensite soldier.io.conf
+sudo a2dissite 000-default.conf
+sudo service apache2 restart
+
+#create profile page in each troop's home directory
+for i in {1..50..1}
+{
+do
+sudo touch /home/Army$i/index.html
+sudo touch /home/Navy$i/index.html
+sudo touch /home/AirForce$i/index.html
+done
+}
+
+#design the page 1 of soldier.io in each troop's directory
+for i in {1..50..1}
+{
+do
+sudo echo "<html>
+<head><title>Army$i</title></head>
+<body>
+<center><h1>Army$i</h1>
+<p>This is your homepage...</p>
+
+</body>
+</html>    "
+done
+}
