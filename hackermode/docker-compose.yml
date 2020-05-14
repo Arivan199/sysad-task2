@@ -24,4 +24,8 @@ services:
         MYSQL_USER: newuser
         MYSQL_PASSWORD: newword
       ports:
-        - 6033:3306 
+        - 6033:3306
+      volumes:
+        - db:/var/lib/mysql
+ volumes:
+   db:
