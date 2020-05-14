@@ -1,5 +1,5 @@
 <?php
-        $con =mysqli_connect('database','newuser','newword');
+        $con =mysqli_connect('localhost','root','root');
         if(!$con)
         {
                 echo "Not connected to server";
