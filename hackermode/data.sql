@@ -5,4 +5,4 @@ CREATE TABLE Complaint_Portal.complaint_table(
 	complaint VARCHAR(50) NOT NULL,
 	time TIMESTAMP NOT NULL DEFAULT NOW(),
 	PRIMARY KEY (id)
-	);
+);
