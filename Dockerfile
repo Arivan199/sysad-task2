@@ -4,7 +4,7 @@ MAINTAINER arivan123 <thavabalanarivan199@gmail.com>
 RUN apt-get update &&\
   apt-get -y install sudo &&\
   apt-get -y install acl &&\
-  apt-get -y install curl &&\
+  apt-get install bsdmainutils &&\
   apt-get -y install bc
 COPY createuser.sh /createuser.sh
 COPY permit.sh /permit.sh
