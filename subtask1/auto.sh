@@ -4,7 +4,7 @@ sudo chmod 755 /var/www
 
 #create the webpages inside the webdirectory
 sudo touch /etc/www/soldier.io/public_html/index.php
-sudo touch /etc/www/soldier.io/public_html/attendance.php
+sudo touch /etc/www/soldier.io/public_html/attendance_record.php
 
 #apache2 configurations to enable the site
 sudo touch /etc/apache2/sites-available/soldier.io.conf
