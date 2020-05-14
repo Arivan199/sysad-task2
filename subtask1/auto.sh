@@ -35,13 +35,35 @@ done
 for i in {1..50..1}
 {
 do
+#Army troop's html page
 sudo echo "<html>
 <head><title>Army$i</title></head>
 <body>
-<center><h1>Army$i</h1>
-<p>This is your homepage...</p>
-
+<center><h1>Welcome Army$i</h1>
+<p>This is your page...</p>
 </body>
-</html>    "
+</html>    " > /home/Army$i/public_html/index.html
+
+#Navy Troop's html page
+sudo echo "<html>
+<head><title>Navy$i</title></head>
+<body>
+<center><h1>Welcome Navy$i</h1>
+<p>This is your page...</p>
+</body>
+</html>    " > /home/Navy$i/public_html/index.html
+
+#AirForce Chief's html page
+sudo echo "<html>
+<head><title>AirFoeceChief$i</title></head>
+<body>
+<center><h1>Welcome AirFoeceChief$i</h1>
+<p>This is your homepage...</p>
+</body>
+</html>    " > /home/Army$i/public_html/index.html
 done
 }
+
+#ensure the redirection
+sudo a2enmod rewrite
+sudo touch /var/www/soldier.io/.htaccess
