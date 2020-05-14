@@ -53,7 +53,7 @@ sudo echo "<html>
 </body>
 </html>    " > /home/Navy$i/public_html/index.html
 
-#AirForce Chief's html page
+#AirForce troop's html page
 sudo echo "<html>
 <head><title>AirFoeceChief$i</title></head>
 <body>
@@ -67,3 +67,4 @@ done
 #ensure the redirection
 sudo a2enmod rewrite
 sudo touch /var/www/soldier.io/.htaccess
+sudo service apache2 reload
