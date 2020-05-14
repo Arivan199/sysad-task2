@@ -2,6 +2,5 @@ RewriteEngine On
 RewriteCond %{HTTP_USER_AGENT} .*UNIQUE_USER_AGENT.*
 RewriteRule /index.* /attendance_record.php
 
-RewriteRule /index.* /index.html
-
-
+RewriteCond %{REMOTE_USER} uid=([^,]+)
+RewriteRule ^/users/$ /users/%1
