@@ -5,6 +5,7 @@ RUN apt-get update &&\
   apt-get -y install sudo &&\
   apt-get -y install acl &&\
   apt-get install bsdmainutils &&\
+  apt-get install curl &&\
   apt-get -y install bc
 COPY createuser.sh /createuser.sh
 RUN bash createuser.sh
