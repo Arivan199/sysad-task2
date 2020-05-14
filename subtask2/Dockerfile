@@ -16,7 +16,6 @@ RUN bash autoschedule.sh
 COPY attendance.sh /attendance.sh
 RUN bash attendance.sh
 COPY record.sh /record.sh
-RUN bash record.sh
 COPY final_attendance.sh /final_attendance.sh
 RUN bash final_attendance.sh
 COPY nearest.sh /nearest.sh
