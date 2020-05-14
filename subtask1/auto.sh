@@ -68,3 +68,16 @@ done
 sudo a2enmod rewrite
 sudo touch /var/www/soldier.io/.htaccess
 sudo service apache2 reload
+sudo a2enmod userdir
+sudo nano /etc/apache2/mods-available/userdir.conf
+sudo echo "<IfModule mod_userdir.c>
+     UserDir public_html
+     UserDir disabled root
+
+        <Directory /home/*/public_html>
+             AllowOverride FileInfo AuthConfig Limit Indexes
+             Options MultiViews Indexes SymLinksIfOwnerMatch IncludesNoExec
+             Require method GET POST OPTIONS
+        </Directory>
+</IfModule>" > /etc/apache2/mods-available/userdir.conf
+sudo service apache2 restart
