@@ -23,17 +23,14 @@ sudo service apache2 restart
 
 #create profile page in each troop's home directory
 for i in {1..50..1}
-{
 do
 sudo touch /home/Army$i/index.html
 sudo touch /home/Navy$i/index.html
 sudo touch /home/AirForce$i/index.html
 done
-}
 
 #design the page 1 of soldier.io in each troop's directory
 for i in {1..50..1}
-{
 do
 #Army troop's html page
 sudo echo "<html>
@@ -62,7 +59,6 @@ sudo echo "<html>
 </body>
 </html>    " > /home/Army$i/public_html/index.html
 done
-}
 
 #ensure the redirection
 sudo a2enmod rewrite
